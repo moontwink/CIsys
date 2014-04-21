@@ -9,8 +9,7 @@ public class TestMain {
 
 	@Test
 	public void test() {
-		Main main = new Main();
-		String helloWorld = main.helloWorld();
+		String helloWorld = Main.helloWorld();
 		assertEquals("Hello World!",helloWorld);
 	}
 
