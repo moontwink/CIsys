@@ -12,7 +12,7 @@ public class UserController {
 	private UserModel userModel;
 	private UserView userView;
 	
-	public UserController(UserModel userModel, UserView userView){
+	public UserController(UserModel userModel, final UserView userView){
 		this.userModel = userModel;
 		this.userView = userView;
 		
@@ -20,6 +20,8 @@ public class UserController {
 			public void actionPerformed(ActionEvent arg0) {
 				if(checkIfValidCredentials()){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
+					userView.getLoginJFrame().dispose();
+					new SysUI();
 				} else {
 					JOptionPane.showMessageDialog(new JFrame(),
 						    "Username and password do not much!",

@@ -21,7 +21,7 @@ public class SysUI {
 	private static JTextField businessField;
 	private static JPanel balancePanel;
 	
-	public static void main(String[] args) {
+	public SysUI() {
 		JFrame jframe = new JFrame();
 		jframe.setSize(new Dimension(600, 360));
 		jframe.setVisible(true);

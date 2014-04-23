@@ -18,13 +18,14 @@ public class UserView {
 	private JTextField userNameTxtField;
 	private JPasswordField passwordTxtField;
 	private JButton btnLogin;
+	private JFrame logInFrame;
 	
 	public UserView(){
 		initComponents();
 	}
 
 	private void initComponents() {
-		JFrame logInFrame = new JFrame("Log-in");
+		logInFrame = new JFrame("Log-in");
 		logInFrame.setSize(new Dimension(345, 298));
 		logInFrame.getContentPane().setLayout(null);
 		
@@ -56,6 +57,11 @@ public class UserView {
 		btnLogin.setBounds(121, 167, 97, 30);
 		logInFrame.getContentPane().add(btnLogin);
 		logInFrame.setVisible(true);
+	}
+	
+	public JFrame getLoginJFrame(){
+		return logInFrame;
+
 	}
 	
 	public String getUserTxtField(){
