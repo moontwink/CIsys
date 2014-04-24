@@ -11,7 +11,12 @@ public class UserModel {
 	private CheckingsAccount checkingsAccount;
 	
 	public UserModel(){
-		
+		firstName = "";
+		lastName = "";
+		password = "";
+		savingsAccount = null;
+		businessAccount = null;
+		checkingsAccount = null;
 	}
 	
 	public UserModel(String firstName, String lastName, String username, String password){

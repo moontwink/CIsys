@@ -15,29 +15,23 @@ import model.CheckingsAccount;
 import model.SavingsAccount;
 import model.UserModel;
 import view.ATMView;
-import view.UserView;
+import view.LogInView;
 
-public class UserController {
+public class LogInController {
 	private UserModel userModel;
-	private UserView userView;
+	private LogInView logInView;
 	
-	public UserController(UserModel userModel, final UserView userView){
+	public LogInController(UserModel userModel, final LogInView logInView){
 		this.userModel = userModel;
-		this.userView = userView;
+		this.logInView = logInView;
 		
-		userView.getLoginBtn().addActionListener(new ActionListener() {
+		logInView.getLoginBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(checkIfValidCredentials()){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
-					userView.getLoginJFrame().dispose();
+					logInView.getLoginJFrame().dispose();
 					
-					ATMView atmView = new ATMView();
-					UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
-					userModel.setBusinessAccount(new BusinessAccount(10000.0));
-					userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
-					userModel.setSavingsAccount(new SavingsAccount(10000.0));
-					
-					ATMController atmController = new ATMController(atmView, userModel);
+					createATMController();
 				} else {
 					JOptionPane.showMessageDialog(new JFrame(),
 						    "Username and password do not much!",
@@ -47,7 +41,7 @@ public class UserController {
 			}
 		});
 		
-		userView.getPasswordField().addKeyListener(new KeyListener() {
+		logInView.getPasswordField().addKeyListener(new KeyListener() {
 			
 			public void keyTyped(KeyEvent arg0) {
 				// TODO Auto-generated method stub
@@ -65,16 +59,9 @@ public class UserController {
 				
 					if(checkIfValidCredentials()){
 						JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
-						userView.getLoginJFrame().dispose();
+						logInView.getLoginJFrame().dispose();
 						
-						ATMView atmView = new ATMView();
-						UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
-						userModel.setBusinessAccount(new BusinessAccount(10000.0));
-						userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
-						userModel.setSavingsAccount(new SavingsAccount(10000.0));
-						
-						@SuppressWarnings("unused")
-						ATMController atmController = new ATMController(atmView, userModel);
+						createATMController();
 					} else {
 						JOptionPane.showMessageDialog(new JFrame(),
 							    "Username and password do not much!",
@@ -103,8 +90,8 @@ public class UserController {
 		nancyNaval.setSavingsAccount(new SavingsAccount(10000.0));
 		userModelList.add(nancyNaval);
 
-		userModel.setUsername(userView.getUserTxtField());
-		userModel.setPassword(userView.getPasswordTxtField());
+		userModel.setUsername(logInView.getUserTxtField());
+		userModel.setPassword(logInView.getPasswordTxtField());
 		
 		for(int index = 0; index < userModelList.size(); index++){
 			if(userModel.getUsername().equals(userModelList.get(index).getUsername()) 
@@ -115,5 +102,16 @@ public class UserController {
 		}
 		
 		return valid;
+	}
+	
+	private void createATMController(){
+		
+		ATMView atmView = new ATMView();
+		UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
+		userModel.setBusinessAccount(new BusinessAccount(10000.0));
+		userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
+		userModel.setSavingsAccount(new SavingsAccount(10000.0));
+		
+		ATMController atmController = new ATMController(atmView, userModel);
 	}
 }

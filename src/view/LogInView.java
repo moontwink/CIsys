@@ -14,13 +14,13 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
-public class UserView {
+public class LogInView {
 	private JTextField userNameTxtField;
 	private JPasswordField passwordTxtField;
 	private JButton btnLogin;
 	private JFrame logInFrame;
 	
-	public UserView(){
+	public LogInView(){
 		initComponents();
 	}
 
