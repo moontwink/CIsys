@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +7,10 @@ import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import model.UserModel;
+import view.ATMView;
+import view.UserView;
 
 public class UserController {
 	private UserModel userModel;
@@ -21,7 +25,7 @@ public class UserController {
 				if(checkIfValidCredentials()){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					userView.getLoginJFrame().dispose();
-					new SysUI();
+					new ATMView();
 				} else {
 					JOptionPane.showMessageDialog(new JFrame(),
 						    "Username and password do not much!",

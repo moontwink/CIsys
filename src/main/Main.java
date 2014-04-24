@@ -1,5 +1,9 @@
 package main;
 
+import view.UserView;
+import model.UserModel;
+import controller.UserController;
+
 public class Main {
 	public static void main(String args[]){
 		UserModel userModel = new UserModel();

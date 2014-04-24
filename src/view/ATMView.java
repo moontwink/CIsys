@@ -1,4 +1,4 @@
-package main;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,13 +15,13 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
-public class SysUI {
+public class ATMView {
 	private static JTextField savingsField;
 	private static JTextField checkingsField;
 	private static JTextField businessField;
 	private static JPanel balancePanel;
 	
-	public SysUI() {
+	public ATMView() {
 		JFrame jframe = new JFrame();
 		jframe.setSize(new Dimension(600, 360));
 		jframe.setVisible(true);
