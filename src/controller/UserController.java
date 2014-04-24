@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,45 @@ public class UserController {
 						    "Username and password do not much!",
 						    "Log-in error",
 						    JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		
+		userView.getPasswordField().addKeyListener(new KeyListener() {
+			
+			public void keyTyped(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void keyReleased(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void keyPressed(KeyEvent arg0) {
+				int key = arg0.getKeyCode();
+				if(key == KeyEvent.VK_ENTER){
+				
+					if(checkIfValidCredentials()){
+						JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
+						userView.getLoginJFrame().dispose();
+						
+						ATMView atmView = new ATMView();
+						UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
+						userModel.setBusinessAccount(new BusinessAccount(10000.0));
+						userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
+						userModel.setSavingsAccount(new SavingsAccount(10000.0));
+						
+						@SuppressWarnings("unused")
+						ATMController atmController = new ATMController(atmView, userModel);
+					} else {
+						JOptionPane.showMessageDialog(new JFrame(),
+							    "Username and password do not much!",
+							    "Log-in error",
+							    JOptionPane.ERROR_MESSAGE);
+					}
+					
 				}
 			}
 		});

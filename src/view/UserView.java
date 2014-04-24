@@ -55,6 +55,7 @@ public class UserView {
 		
 		btnLogin = new JButton("Log-in");
 		btnLogin.setBounds(121, 167, 97, 30);
+		
 		logInFrame.getContentPane().add(btnLogin);
 		logInFrame.setVisible(true);
 	}
@@ -64,9 +65,17 @@ public class UserView {
 
 	}
 	
+	public JTextField getUsernameField(){
+		return userNameTxtField;
+	}
+	
 	public String getUserTxtField(){
 		System.out.println("Username: " +userNameTxtField.getText());
 		return userNameTxtField.getText();
+	}
+	
+	public JTextField getPasswordField(){
+		return passwordTxtField;
 	}
 	
 	public String getPasswordTxtField(){

@@ -3,8 +3,10 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.TransactionType;
 import model.UserModel;
 import view.ATMView;
+import view.CashView;
 
 public class ATMController {
 	private ATMView atmView;
@@ -22,6 +24,20 @@ public class ATMController {
 				atmView.getSavingsField().setText("PHP " + userModel.getSavingsAccount().getBalance());
 				atmView.getBusinessField().setText("PHP " + userModel.getBusinessAccount().getBalance());
 				atmView.getCheckingsField().setText("PHP " + userModel.getCheckingsAccount().getBalance());
+			}
+		});
+		
+		atmView.getBtnWithdraw().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				@SuppressWarnings("unused")
+				CashController cashController = new CashController(new CashView(), userModel, TransactionType.WITHDRAW);
+			}
+		});
+		
+		atmView.getBtnDeposit().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				@SuppressWarnings("unused")
+				CashController cashController = new CashController(new CashView(), userModel, TransactionType.DEPOSIT);
 			}
 		});
 	}
