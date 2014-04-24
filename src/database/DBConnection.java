@@ -16,7 +16,7 @@ public class DBConnection {
         dbName = "accounts"; 
         dbDriver = "com.mysql.jdbc.Driver"; 
         username = "root"; 
-        password = "1234"; 
+        password = ""; 
           
         try { 
         Class.forName(dbDriver).newInstance(); 

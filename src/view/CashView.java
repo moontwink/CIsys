@@ -21,8 +21,10 @@ public class CashView {
 	private JPanel cashPanel;
 	private JTextField cashField;
 	private JButton btnEnter;
-	private JComboBox currencyBox;
-
+	private JRadioButton rdbtnSavings;
+	private JRadioButton rdbtnCheckings;
+	private JRadioButton rdbtnBusiness;
+	
 	public CashView(){
 		JFrame jframe = new JFrame();
 		jframe.setSize(new Dimension(420, 175));
@@ -37,28 +39,28 @@ public class CashView {
 		cashPanel.setLayout(null);
 		
 		cashField = new JTextField();
-		cashField.setBounds(155, 53, 123, 20);
-		cashPanel.add(cashField);
-		cashField.setColumns(10);
+		getCashField().setBounds(155, 53, 123, 20);
+		cashPanel.add(getCashField());
+		getCashField().setColumns(10);
 		
 		btnEnter = new JButton("Enter");
 		btnEnter.setBounds(113, 84, 131, 23);
 		cashPanel.add(btnEnter);
 		
 		Object[] currencies = {"PHP"};
-		currencyBox = new JComboBox(currencies);
+		JComboBox currencyBox = new JComboBox(currencies);
 		currencyBox.setBounds(84, 53, 61, 20);
 		cashPanel.add(currencyBox);
 		
-		JRadioButton rdbtnSavings = new JRadioButton("SAVINGS");
+		rdbtnSavings = new JRadioButton("SAVINGS");
 		rdbtnSavings.setBounds(24, 23, 104, 23);
 		cashPanel.add(rdbtnSavings);
 		
-		JRadioButton rdbtnCheckings = new JRadioButton("CHECKINGS");
+		rdbtnCheckings = new JRadioButton("CHECKINGS");
 		rdbtnCheckings.setBounds(148, 23, 104, 23);
 		cashPanel.add(rdbtnCheckings);
 		
-		JRadioButton rdbtnBusiness = new JRadioButton("BUSINESS");
+		rdbtnBusiness = new JRadioButton("BUSINESS");
 		rdbtnBusiness.setBounds(272, 23, 104, 23);
 		cashPanel.add(rdbtnBusiness);
 		
@@ -78,5 +80,17 @@ public class CashView {
 	
 	public JTextField getCashField(){
 		return cashField;
+	}
+
+	public String getSelectedValue() {
+		String selectedAccount = "";
+		if(rdbtnSavings.isSelected()){
+			selectedAccount = "savings";
+		} else if(rdbtnCheckings.isSelected()){
+			selectedAccount = "checkings";
+		} else if(rdbtnBusiness.isSelected()){
+			selectedAccount = "business";
+		}
+		return selectedAccount;
 	}
 }

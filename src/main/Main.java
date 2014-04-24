@@ -9,10 +9,6 @@ public class Main {
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
 		
-		LogInController userController = new LogInController(userModel, logInView);		
-	}
-	
-	public static String helloWorld(){
-		return "Hello World!";
+		LogInController logInController = new LogInController(userModel, logInView);		
 	}
 }
