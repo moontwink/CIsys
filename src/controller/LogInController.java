@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 import database.DBConnection;
+import database.UserHandler;
 import model.BusinessAccount;
 import model.CheckingsAccount;
 import model.SavingsAccount;
@@ -31,59 +32,11 @@ import view.LogInView;
 public class LogInController {
 	private UserModel userModel;
 	private LogInView logInView;
-	private DBConnection dbConnection;
-	List<UserModel> userModelList;
 	
 	public LogInController(UserModel userModel, final LogInView logInView){
 		this.userModel = userModel;
 		this.logInView = logInView;
-		dbConnection = new DBConnection();
-		userModelList = new ArrayList<UserModel>();
-		getAllUsers();
 		createListeners();
-	}
-
-	private void getAllUsers() {
-		String selectQuery = "SELECT * FROM user";
-		
-		dbConnection.connect();
-		
-		try { 
-			Connection conn = dbConnection.getConnection();
-			Statement stmt = conn.createStatement(); 
-			ResultSet rs = stmt.executeQuery(selectQuery);
-			
-			while(rs.next()){
-				UserModel userModel = new UserModel();
-				userModel.setId(rs.getInt(1));
-				userModel.setFirstName(rs.getString(2));
-				userModel.setLastName(rs.getString(3));
-				userModel.setUsername(rs.getString(4));
-				userModel.setPassword(rs.getString(5));
-				
-				userModelList.add(userModel);
-			}
-	    } catch (SQLException e) { 
-	    	e.printStackTrace(); 
-	    } 
-		
-		try { 
-			Connection conn = dbConnection.getConnection();
-			
-			for(int i = 0; i<userModelList.size(); i++){
-				String selectAccountsQuery = "SELECT * FROM user_accounts WHERE user_accounts_id = " + userModelList.get(i).getId();
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(selectAccountsQuery);
-				rs.next();
-				userModelList.get(i).setSavingsAccount(new SavingsAccount(rs.getDouble(2)));
-				userModelList.get(i).setBusinessAccount(new BusinessAccount(rs.getDouble(3)));
-				userModelList.get(i).setCheckingsAccount(new CheckingsAccount(rs.getDouble(4)));
-			}
-	    } catch (SQLException e) { 
-	    	e.printStackTrace(); 
-	    } 
-	
-		dbConnection.disconnect();
 	}
 
 	private void createListeners() {
@@ -134,13 +87,13 @@ public class LogInController {
 		String username = logInView.getUserTxtField();
 		String password = logInView.getPasswordTxtField();
 		
-		for(int index = 0; index < userModelList.size(); index++){
-			System.out.println(userModelList.get(index).getUsername());
-			System.out.println(userModelList.get(index).getPassword());
-			if(username.equals(userModelList.get(index).getUsername()) 
-					&& password.equals(userModelList.get(index).getPassword())){
+		UserHandler userHandler = new UserHandler();
+		for(UserModel u : userHandler.getAllUsers()){
+			
+			if(username.equals(u.getUsername())
+					&& password.equals(u.getPassword())){
 				valid = true;
-				userModel = userModelList.get(index);
+				userModel = u;
 				break;
 			}
 		}
