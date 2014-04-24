@@ -28,7 +28,14 @@ public class UserController {
 				if(checkIfValidCredentials()){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					userView.getLoginJFrame().dispose();
-					new ATMView();
+					
+					ATMView atmView = new ATMView();
+					UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
+					userModel.setBusinessAccount(new BusinessAccount(10000.0));
+					userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
+					userModel.setSavingsAccount(new SavingsAccount(10000.0));
+					
+					ATMController atmController = new ATMController(atmView, userModel);
 				} else {
 					JOptionPane.showMessageDialog(new JFrame(),
 						    "Username and password do not much!",

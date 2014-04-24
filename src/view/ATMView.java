@@ -16,10 +16,14 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 public class ATMView {
-	private static JTextField savingsField;
-	private static JTextField checkingsField;
-	private static JTextField businessField;
-	private static JPanel balancePanel;
+	private JTextField savingsField;
+	private JTextField checkingsField;
+	private JTextField businessField;
+	private JPanel balancePanel;
+	private JLabel welcomeLabel;
+	private JButton btnInquireBalance;
+	private JButton btnWithdraw;
+	private JButton btnDeposit;
 	
 	public ATMView() {
 		JFrame jframe = new JFrame();
@@ -31,54 +35,54 @@ public class ATMView {
 		panel.setLayout(null);
 		panel.setSize(new Dimension(360, 360));
 		
-		JLabel welcomeLabel = new JLabel("Welcome!");
+		welcomeLabel = new JLabel();
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomeLabel.setBounds(0, 35, 340, 25);
 		welcomeLabel.setFont(new Font("Cambria", Font.BOLD, 21));
 		panel.add(welcomeLabel);
 		
 		balancePanel = new JPanel();
-		balancePanel.setBorder(new TitledBorder(null, "Balance", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		balancePanel.setBounds(349, 68, 206, 221);
-		panel.add(balancePanel);
-		balancePanel.setLayout(null);
-		balancePanel.setVisible(false);
+		getBalancePanel().setBorder(new TitledBorder(null, "Balance", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		getBalancePanel().setBounds(349, 68, 206, 221);
+		panel.add(getBalancePanel());
+		getBalancePanel().setLayout(null);
+		getBalancePanel().setVisible(false);
 		
 		JLabel lblSavings = new JLabel("SAVINGS");
 		lblSavings.setBounds(22, 36, 60, 14);
-		balancePanel.add(lblSavings);
+		getBalancePanel().add(lblSavings);
 		lblSavings.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		savingsField = new JTextField();
-		savingsField.setBounds(46, 52, 132, 20);
-		balancePanel.add(savingsField);
-		savingsField.setEditable(false);
-		savingsField.setBackground(Color.LIGHT_GRAY);
-		savingsField.setColumns(10);
+		setSavingsField(new JTextField());
+		getSavingsField().setBounds(46, 52, 132, 20);
+		getBalancePanel().add(getSavingsField());
+		getSavingsField().setEditable(false);
+		getSavingsField().setBackground(Color.LIGHT_GRAY);
+		getSavingsField().setColumns(10);
 		
 		JLabel lblCheckingsAccount = new JLabel("CHECKINGS ACCOUNT");
 		lblCheckingsAccount.setBounds(22, 83, 156, 14);
-		balancePanel.add(lblCheckingsAccount);
+		getBalancePanel().add(lblCheckingsAccount);
 		lblCheckingsAccount.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		checkingsField = new JTextField();
-		checkingsField.setBounds(46, 100, 132, 20);
-		balancePanel.add(checkingsField);
-		checkingsField.setEditable(false);
-		checkingsField.setColumns(10);
-		checkingsField.setBackground(Color.LIGHT_GRAY);
+		setCheckingsField(new JTextField());
+		getCheckingsField().setBounds(46, 100, 132, 20);
+		getBalancePanel().add(getCheckingsField());
+		getCheckingsField().setEditable(false);
+		getCheckingsField().setColumns(10);
+		getCheckingsField().setBackground(Color.LIGHT_GRAY);
 		
 		JLabel lblBusinessAccount = new JLabel("BUSINESS ACCOUNT");
 		lblBusinessAccount.setBounds(22, 131, 156, 14);
-		balancePanel.add(lblBusinessAccount);
+		getBalancePanel().add(lblBusinessAccount);
 		lblBusinessAccount.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		businessField = new JTextField();
-		businessField.setBounds(46, 156, 132, 20);
-		balancePanel.add(businessField);
-		businessField.setEditable(false);
-		businessField.setColumns(10);
-		businessField.setBackground(Color.LIGHT_GRAY);
+		setBusinessField(new JTextField());
+		getBusinessField().setBounds(46, 156, 132, 20);
+		getBalancePanel().add(getBusinessField());
+		getBusinessField().setEditable(false);
+		getBusinessField().setColumns(10);
+		getBusinessField().setBackground(Color.LIGHT_GRAY);
 		
 		JPanel buttonsPanel = new JPanel();
 		buttonsPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -86,26 +90,68 @@ public class ATMView {
 		panel.add(buttonsPanel);
 		buttonsPanel.setLayout(null);
 		
-		JButton btnInquireBalance = new JButton("Inquire Balance");
-		btnInquireBalance.setBounds(21, 24, 132, 50);
-		buttonsPanel.add(btnInquireBalance);
-		btnInquireBalance.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				balancePanel.setVisible(true);
-				
-			}
-		});
-		btnInquireBalance.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnInquireBalance = new JButton("Inquire Balance");
+		getBtnInquireBalance().setBounds(21, 24, 132, 50);
+		buttonsPanel.add(getBtnInquireBalance());
 		
-		JButton btnWithdraw = new JButton("Withdraw");
-		btnWithdraw.setBounds(163, 24, 132, 50);
-		buttonsPanel.add(btnWithdraw);
-		btnWithdraw.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		getBtnInquireBalance().setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		JButton btnDeposit = new JButton("Deposit");
-		btnDeposit.setBounds(163, 92, 132, 50);
-		buttonsPanel.add(btnDeposit);
-		btnDeposit.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnWithdraw = new JButton("Withdraw");
+		getBtnWithdraw().setBounds(163, 24, 132, 50);
+		buttonsPanel.add(getBtnWithdraw());
+		getBtnWithdraw().setFont(new Font("Tahoma", Font.PLAIN, 12));
+		
+		btnDeposit = new JButton("Deposit");
+		getBtnDeposit().setBounds(163, 92, 132, 50);
+		buttonsPanel.add(getBtnDeposit());
+		getBtnDeposit().setFont(new Font("Tahoma", Font.PLAIN, 12));
+	}
+	
+	public JLabel getWelcomeLabel() {
+		return welcomeLabel;
+	}
+	
+	public void setWelcomeLabel(JLabel welcomeLabel) {
+		this.welcomeLabel = welcomeLabel;
+	}
+
+	public JButton getBtnInquireBalance() {
+		return btnInquireBalance;
+	}
+
+	public JButton getBtnWithdraw() {
+		return btnWithdraw;
+	}
+
+	public JButton getBtnDeposit() {
+		return btnDeposit;
+	}
+
+	public JPanel getBalancePanel() {
+		return balancePanel;
+	}
+
+	public JTextField getSavingsField() {
+		return savingsField;
+	}
+
+	public void setSavingsField(JTextField savingsField) {
+		this.savingsField = savingsField;
+	}
+
+	public JTextField getCheckingsField() {
+		return checkingsField;
+	}
+
+	public void setCheckingsField(JTextField checkingsField) {
+		this.checkingsField = checkingsField;
+	}
+
+	public JTextField getBusinessField() {
+		return businessField;
+	}
+
+	public void setBusinessField(JTextField businessField) {
+		this.businessField = businessField;
 	}
 }
