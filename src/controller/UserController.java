@@ -8,6 +8,9 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import model.BusinessAccount;
+import model.CheckingsAccount;
+import model.SavingsAccount;
 import model.UserModel;
 import view.ATMView;
 import view.UserView;
@@ -39,16 +42,23 @@ public class UserController {
 	public boolean checkIfValidCredentials(){
 		boolean valid = false;
 		List<UserModel> userModelList = new ArrayList<UserModel>();
-		userModelList.add(new UserModel("Timothy", "Rodriguez", "timohtey","123456"));
-		userModelList.add(new UserModel("Nancy", "Naval", "moontwink", "helloworld"));
+		
+		UserModel timothyRodriguez = new UserModel("Timothy", "Rodriguez", "timohtey","123456");
+		timothyRodriguez.setBusinessAccount(new BusinessAccount(5000.0));
+		timothyRodriguez.setCheckingsAccount(new CheckingsAccount(10000.0));
+		timothyRodriguez.setSavingsAccount(new SavingsAccount(10000.0));
+		userModelList.add(timothyRodriguez);
+		
+		UserModel nancyNaval = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
+		nancyNaval.setBusinessAccount(new BusinessAccount(10000.0));
+		nancyNaval.setCheckingsAccount(new CheckingsAccount(20000.0));
+		nancyNaval.setSavingsAccount(new SavingsAccount(10000.0));
+		userModelList.add(nancyNaval);
 
 		userModel.setUsername(userView.getUserTxtField());
 		userModel.setPassword(userView.getPasswordTxtField());
 		
 		for(int index = 0; index < userModelList.size(); index++){
-			System.out.println(userModel.getUsername() +" " +userModelList.get(index).getUsername());
-			System.out.println(userModel.getPassword()+" " + userModelList.get(index).getPassword());
-			
 			if(userModel.getUsername().equals(userModelList.get(index).getUsername()) 
 					&& userModel.getPassword().equals(userModelList.get(index).getPassword())){
 				valid = true;

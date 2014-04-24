@@ -1,10 +1,14 @@
 package model;
 
+
 public class UserModel {
 	private String firstName;
 	private String lastName;
 	private String username;
 	private String password;
+	private SavingsAccount savingsAccount;
+	private BusinessAccount businessAccount;
+	private CheckingsAccount checkingsAccount;
 	
 	public UserModel(){
 		
@@ -47,5 +51,29 @@ public class UserModel {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public SavingsAccount getSavingsAccount() {
+		return savingsAccount;
+	}
+
+	public void setSavingsAccount(SavingsAccount savingsAccount) {
+		this.savingsAccount = savingsAccount;
+	}
+
+	public BusinessAccount getBusinessAccount() {
+		return businessAccount;
+	}
+
+	public void setBusinessAccount(BusinessAccount businessAccount) {
+		this.businessAccount = businessAccount;
+	}
+
+	public CheckingsAccount getCheckingsAccount() {
+		return checkingsAccount;
+	}
+
+	public void setCheckingsAccount(CheckingsAccount checkingsAccount) {
+		this.checkingsAccount = checkingsAccount;
 	}
 }
