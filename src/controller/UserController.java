@@ -7,8 +7,13 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 import model.BusinessAccount;
 import model.CheckingsAccount;
@@ -47,41 +52,31 @@ public class UserController {
 			}
 		});
 		
-		userView.getPasswordField().addKeyListener(new KeyListener() {
+		int condition = JComponent.WHEN_FOCUSED;
+		InputMap iMap = userView.getPasswordField().getInputMap(condition);
+		ActionMap aMap = userView.getPasswordField().getActionMap();
+		String enter = "enter";
+		iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
+		aMap.put(enter, new AbstractAction() {
 			
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			public void keyReleased(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			public void keyPressed(KeyEvent arg0) {
-				int key = arg0.getKeyCode();
-				if(key == KeyEvent.VK_ENTER){
-				
-					if(checkIfValidCredentials()){
-						JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
-						userView.getLoginJFrame().dispose();
-						
-						ATMView atmView = new ATMView();
-						UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
-						userModel.setBusinessAccount(new BusinessAccount(10000.0));
-						userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
-						userModel.setSavingsAccount(new SavingsAccount(10000.0));
-						
-						@SuppressWarnings("unused")
-						ATMController atmController = new ATMController(atmView, userModel);
-					} else {
-						JOptionPane.showMessageDialog(new JFrame(),
-							    "Username and password do not much!",
-							    "Log-in error",
-							    JOptionPane.ERROR_MESSAGE);
-					}
+			public void actionPerformed(ActionEvent e) {
+				if(checkIfValidCredentials()){
+					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
+					userView.getLoginJFrame().dispose();
 					
+					ATMView atmView = new ATMView();
+					UserModel userModel = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
+					userModel.setBusinessAccount(new BusinessAccount(10000.0));
+					userModel.setCheckingsAccount(new CheckingsAccount(20000.0));
+					userModel.setSavingsAccount(new SavingsAccount(10000.0));
+					
+					@SuppressWarnings("unused")
+					ATMController atmController = new ATMController(atmView, userModel);
+				} else {
+					JOptionPane.showMessageDialog(new JFrame(),
+						    "Username and password do not much!",
+						    "Log-in error",
+						    JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

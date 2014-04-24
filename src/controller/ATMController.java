@@ -29,6 +29,7 @@ public class ATMController {
 		
 		atmView.getBtnWithdraw().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				atmView.getButtonsPanel().setEnabled(false);
 				@SuppressWarnings("unused")
 				CashController cashController = new CashController(new CashView(), userModel, TransactionType.WITHDRAW);
 			}
@@ -36,6 +37,7 @@ public class ATMController {
 		
 		atmView.getBtnDeposit().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				atmView.getButtonsPanel().setEnabled(false);
 				@SuppressWarnings("unused")
 				CashController cashController = new CashController(new CashView(), userModel, TransactionType.DEPOSIT);
 			}

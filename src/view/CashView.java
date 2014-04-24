@@ -3,6 +3,7 @@ package view;
 import java.awt.Dimension;
 import java.util.Arrays;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -10,7 +11,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
+
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JRadioButton;
 
 public class CashView {
 	private JPanel cashPanel;
@@ -20,31 +25,47 @@ public class CashView {
 
 	public CashView(){
 		JFrame jframe = new JFrame();
-		jframe.setSize(new Dimension(250,150));
+		jframe.setSize(new Dimension(420, 175));
+		jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
 		jframe.getContentPane().setLayout(null);
 		
 		cashPanel = new JPanel();
 		cashPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Enter Amount", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		cashPanel.setBounds(10, 11, 214, 90);
+		cashPanel.setBounds(10, 11, 380, 119);
 		jframe.getContentPane().add(cashPanel);
 		cashPanel.setLayout(null);
 		
 		cashField = new JTextField();
-		cashField.setBounds(81, 21, 123, 20);
+		cashField.setBounds(155, 53, 123, 20);
 		cashPanel.add(cashField);
 		cashField.setColumns(10);
 		
 		btnEnter = new JButton("Enter");
-		btnEnter.setBounds(61, 52, 89, 23);
+		btnEnter.setBounds(113, 84, 131, 23);
 		cashPanel.add(btnEnter);
 		
-		Object[] currencies = {"PHP", "USD", "SGD", "YEN"};
-		Arrays.sort(currencies);
+		Object[] currencies = {"PHP"};
 		currencyBox = new JComboBox(currencies);
-		currencyBox.setBounds(10, 21, 61, 20);
+		currencyBox.setBounds(84, 53, 61, 20);
 		cashPanel.add(currencyBox);
 		
+		JRadioButton rdbtnSavings = new JRadioButton("SAVINGS");
+		rdbtnSavings.setBounds(24, 23, 104, 23);
+		cashPanel.add(rdbtnSavings);
+		
+		JRadioButton rdbtnCheckings = new JRadioButton("CHECKINGS");
+		rdbtnCheckings.setBounds(148, 23, 104, 23);
+		cashPanel.add(rdbtnCheckings);
+		
+		JRadioButton rdbtnBusiness = new JRadioButton("BUSINESS");
+		rdbtnBusiness.setBounds(272, 23, 104, 23);
+		cashPanel.add(rdbtnBusiness);
+		
+		ButtonGroup btnGroup = new ButtonGroup();
+		btnGroup.add(rdbtnBusiness);
+		btnGroup.add(rdbtnCheckings);
+		btnGroup.add(rdbtnSavings);
 	}
 	
 	public JButton getBtnEnter(){

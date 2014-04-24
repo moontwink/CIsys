@@ -24,11 +24,13 @@ public class ATMView {
 	private JButton btnInquireBalance;
 	private JButton btnWithdraw;
 	private JButton btnDeposit;
+	private JPanel buttonsPanel;
 	
 	public ATMView() {
 		JFrame jframe = new JFrame();
 		jframe.setSize(new Dimension(600, 360));
 		jframe.setVisible(true);
+		jframe.setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		jframe.getContentPane().add(panel, BorderLayout.CENTER);
@@ -84,7 +86,7 @@ public class ATMView {
 		getBusinessField().setColumns(10);
 		getBusinessField().setBackground(Color.LIGHT_GRAY);
 		
-		JPanel buttonsPanel = new JPanel();
+		buttonsPanel = new JPanel();
 		buttonsPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		buttonsPanel.setBounds(24, 95, 316, 165);
 		panel.add(buttonsPanel);
@@ -105,6 +107,10 @@ public class ATMView {
 		getBtnDeposit().setBounds(163, 92, 132, 50);
 		buttonsPanel.add(getBtnDeposit());
 		getBtnDeposit().setFont(new Font("Tahoma", Font.PLAIN, 12));
+	}
+	
+	public JPanel getButtonsPanel(){
+		return buttonsPanel;
 	}
 	
 	public JLabel getWelcomeLabel() {
