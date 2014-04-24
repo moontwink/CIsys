@@ -12,8 +12,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 import database.DBConnection;
 import model.BusinessAccount;
@@ -82,6 +87,29 @@ public class LogInController {
 	}
 
 	private void createListeners() {
+		int condition = JComponent.WHEN_FOCUSED;
+		InputMap iMap = logInView.getPasswordField().getInputMap(condition);
+		ActionMap aMap = logInView.getPasswordField().getActionMap();
+		String enter = "enter";
+		iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
+		aMap.put(enter, new AbstractAction() {
+			
+			public void actionPerformed(ActionEvent e) {
+				if(checkIfValidCredentials()){
+					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
+					logInView.getLoginJFrame().dispose();
+					
+					createATMController();
+				} else {
+					JOptionPane.showMessageDialog(new JFrame(),
+						    "Username and password do not much!",
+						    "Log-in error",
+						    JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+	
 		logInView.getLoginBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(checkIfValidCredentials()){
@@ -94,38 +122,6 @@ public class LogInController {
 						    "Username and password do not much!",
 						    "Log-in error",
 						    JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		});
-		
-		logInView.getPasswordField().addKeyListener(new KeyListener() {
-			
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			public void keyReleased(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			public void keyPressed(KeyEvent arg0) {
-				int key = arg0.getKeyCode();
-				if(key == KeyEvent.VK_ENTER){
-				
-					if(checkIfValidCredentials()){
-						JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
-						logInView.getLoginJFrame().dispose();
-						
-						createATMController();
-					} else {
-						JOptionPane.showMessageDialog(new JFrame(),
-							    "Username and password do not much!",
-							    "Log-in error",
-							    JOptionPane.ERROR_MESSAGE);
-					}
-					
 				}
 			}
 		});
