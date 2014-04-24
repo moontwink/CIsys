@@ -15,14 +15,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class UserView {
+public class LogInView {
 	private JTextField userNameTxtField;
 	private JPasswordField passwordTxtField;
 	private JButton btnLogin;
 	private JFrame logInFrame;
 	private JPanel loginPanel;
 	
-	public UserView(){
+	public LogInView(){
 		initComponents();
 	}
 

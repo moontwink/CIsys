@@ -2,6 +2,7 @@ package model;
 
 
 public class UserModel {
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String username;
@@ -10,8 +11,22 @@ public class UserModel {
 	private BusinessAccount businessAccount;
 	private CheckingsAccount checkingsAccount;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public UserModel(){
-		
+		setId(0);
+		firstName = "";
+		lastName = "";
+		password = "";
+		savingsAccount = null;
+		businessAccount = null;
+		checkingsAccount = null;
 	}
 	
 	public UserModel(String firstName, String lastName, String username, String password){

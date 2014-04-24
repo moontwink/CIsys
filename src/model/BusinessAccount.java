@@ -4,7 +4,7 @@ public class BusinessAccount implements Account{
 	private double balance;
 	
 	public BusinessAccount(){
-		
+		balance = 0;
 	}
 	
 	public BusinessAccount(double balance){

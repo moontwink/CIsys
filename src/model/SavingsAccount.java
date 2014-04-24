@@ -1,10 +1,10 @@
 package model;
 
 public class SavingsAccount implements Account{
-	private double balance = 0;
+	private double balance;
 	
 	public SavingsAccount(){
-		
+		balance = 0;
 	}
 	
 	public SavingsAccount(double balance){

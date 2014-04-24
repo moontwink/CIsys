@@ -4,7 +4,7 @@ public class CheckingsAccount implements Account{
 	private double balance;
 	
 	public CheckingsAccount(){
-		
+		balance = 0;
 	}
 	
 	public CheckingsAccount(double balance){
