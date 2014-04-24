@@ -13,7 +13,7 @@ public class DBConnection {
       
     public void connect(){ 
         dbUrl = "jdbc:mysql://localhost:3306/"; 
-        dbName = "mydb"; 
+        dbName = "accounts"; 
         dbDriver = "com.mysql.jdbc.Driver"; 
         username = "root"; 
         password = "1234"; 
