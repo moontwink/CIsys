@@ -7,12 +7,12 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import exception.WithdrawalException;
 import model.AccountType;
 import model.BusinessAccount;
 import model.CheckingsAccount;
 import model.SavingsAccount;
 import model.UserModel;
+import exception.WithdrawalException;
 
 
 public class AccountHandler {

@@ -2,11 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.beans.PropertyChangeListener;
 
 import javax.swing.AbstractAction;
-import javax.swing.Action;
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
@@ -14,13 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import database.AccountHandler;
-import exception.WithdrawalException;
 import model.AccountType;
 import model.TransactionType;
 import model.UserModel;
-import view.ATMView;
 import view.CashView;
+import database.AccountHandler;
+import exception.WithdrawalException;
 
 public class CashController {
 	private CashView cashView;

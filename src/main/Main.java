@@ -2,8 +2,8 @@ package main;
 
 import java.sql.SQLException;
 
-import view.LogInView;
 import model.UserModel;
+import view.LogInView;
 import controller.LogInController;
 
 public class Main {

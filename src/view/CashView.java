@@ -1,21 +1,17 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.util.Arrays;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.TitledBorder;
-import javax.swing.UIManager;
-
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 
 import model.AccountType;
 

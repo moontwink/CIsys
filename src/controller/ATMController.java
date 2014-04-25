@@ -3,11 +3,11 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import database.AccountHandler;
 import model.TransactionType;
 import model.UserModel;
 import view.ATMView;
 import view.CashView;
+import database.AccountHandler;
 
 public class ATMController {
 	private ATMView atmView;

@@ -3,9 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,14 +18,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import database.DBConnection;
-import database.UserHandler;
 import model.BusinessAccount;
 import model.CheckingsAccount;
 import model.SavingsAccount;
 import model.UserModel;
 import view.ATMView;
 import view.LogInView;
+import database.DBConnection;
+import database.UserHandler;
 
 public class LogInController {
 	private static UserModel userModel;
