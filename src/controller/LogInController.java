@@ -39,11 +39,11 @@ public class LogInController {
 		this.logInView = logInView;
 		dbConnection = new DBConnection();
 		userModelList = new ArrayList<UserModel>();
-		getAllUsers();
+		getAllUsers(this.userModelList);
 		createListeners();
 	}
 
-	private void getAllUsers() {
+	public void getAllUsers(List<UserModel> userModelList) {
 		String selectQuery = "SELECT * FROM user";
 		
 		dbConnection.connect();
@@ -95,7 +95,7 @@ public class LogInController {
 		aMap.put(enter, new AbstractAction() {
 			
 			public void actionPerformed(ActionEvent e) {
-				if(checkIfValidCredentials()){
+				if(checkIfValidCredentials(userModelList, logInView.getUserTxtField(),logInView.getPasswordTxtField())){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					logInView.getLoginJFrame().dispose();
 					
@@ -112,7 +112,7 @@ public class LogInController {
 	
 		logInView.getLoginBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(checkIfValidCredentials()){
+				if(checkIfValidCredentials(userModelList, logInView.getUserTxtField(),logInView.getPasswordTxtField())){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					logInView.getLoginJFrame().dispose();
 					
@@ -128,11 +128,8 @@ public class LogInController {
 		
 	}
 	
-	private boolean checkIfValidCredentials(){
+	public boolean checkIfValidCredentials(List<UserModel> userModelList, String username, String password){
 		boolean valid = false;
-		
-		String username = logInView.getUserTxtField();
-		String password = logInView.getPasswordTxtField();
 		
 		for(int index = 0; index < userModelList.size(); index++){
 			System.out.println(userModelList.get(index).getUsername());
