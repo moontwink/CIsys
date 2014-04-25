@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import controller.LogInController;
 public class LogInTest {
 
 	@Test
-	public void logInValid() {
+	public void logInValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
@@ -30,7 +31,7 @@ public class LogInTest {
 	}
 	
 	@Test
-	public void logInFailed(){
+	public void logInFailed() throws ClassNotFoundException, SQLException{
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
