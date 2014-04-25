@@ -32,11 +32,57 @@ import view.LogInView;
 public class LogInController {
 	private static UserModel userModel;
 	private LogInView logInView;
-	
-	public LogInController(UserModel userModel, final LogInView logInView){
+	private DBConnection dbConnection;
+	private List<UserModel> userModelList;
+	public LogInController(UserModel userModel, final LogInView logInView) throws ClassNotFoundException, SQLException{
 		this.userModel = userModel;
 		this.logInView = logInView;
+		dbConnection = new DBConnection();
+		userModelList = new ArrayList<UserModel>();
+		getAllUsers(this.userModelList);
 		createListeners();
+	}
+
+	public void getAllUsers(List<UserModel> userModelList) throws ClassNotFoundException, SQLException {
+		String selectQuery = "SELECT * FROM user";
+
+		Connection conn = dbConnection.getConnection();
+				
+		try { 
+			conn = dbConnection.getConnection();
+			Statement stmt = conn.createStatement(); 
+			ResultSet rs = stmt.executeQuery(selectQuery);
+			
+			while(rs.next()){
+				UserModel userModel = new UserModel();
+				userModel.setId(rs.getInt(1));
+				userModel.setFirstName(rs.getString(2));
+				userModel.setLastName(rs.getString(3));
+				userModel.setUsername(rs.getString(4));
+				userModel.setPassword(rs.getString(5));
+				
+				userModelList.add(userModel);
+			}
+	    } catch (SQLException e) { 
+	    	e.printStackTrace(); 
+	    } 
+		
+		try { 
+			
+			for(int i = 0; i<userModelList.size(); i++){
+				String selectAccountsQuery = "SELECT * FROM user_accounts WHERE user_accounts_id = " + userModelList.get(i).getId();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(selectAccountsQuery);
+				rs.next();
+				userModelList.get(i).setSavingsAccount(new SavingsAccount(rs.getDouble(2)));
+				userModelList.get(i).setBusinessAccount(new BusinessAccount(rs.getDouble(3)));
+				userModelList.get(i).setCheckingsAccount(new CheckingsAccount(rs.getDouble(4)));
+			}
+	    } catch (SQLException e) { 
+	    	e.printStackTrace(); 
+	    } 
+	
+		dbConnection.closeConnection(conn);
 	}
 
 	private void createListeners() {
@@ -48,7 +94,7 @@ public class LogInController {
 		aMap.put(enter, new AbstractAction() {
 			
 			public void actionPerformed(ActionEvent e) {
-				if(checkIfValidCredentials()){
+				if(checkIfValidCredentials(userModelList, logInView.getUserTxtField(),logInView.getPasswordTxtField())){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					logInView.getLoginJFrame().dispose();
 					
@@ -65,7 +111,7 @@ public class LogInController {
 	
 		logInView.getLoginBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(checkIfValidCredentials()){
+				if(checkIfValidCredentials(userModelList, logInView.getUserTxtField(),logInView.getPasswordTxtField())){
 					JOptionPane.showMessageDialog(new JFrame(), "Log-in successful!");
 					logInView.getLoginJFrame().dispose();
 					
@@ -81,20 +127,23 @@ public class LogInController {
 		
 	}
 	
-	private boolean checkIfValidCredentials(){
+	public boolean checkIfValidCredentials(List<UserModel> userModelList, String username, String password){
 		boolean valid = false;
 		
-		String username = logInView.getUserTxtField();
-		String password = logInView.getPasswordTxtField();
-		
-		UserHandler userHandler = new UserHandler();
-		for(UserModel u : userHandler.getAllUsers()){
-			
-			if(username.equals(u.getUsername())
-					&& password.equals(u.getPassword())){
-				valid = true;
-				userModel = u;
-				break;
+		for(int index = 0; index < userModelList.size(); index++){
+			System.out.println(userModelList.get(index).getUsername());
+			System.out.println(userModelList.get(index).getPassword());
+			if(username.equals(userModelList.get(index).getUsername()) 
+					&& password.equals(userModelList.get(index).getPassword())){
+				UserHandler userHandler = new UserHandler();
+				for(UserModel u : userHandler.getAllUsers()){
+					if(username.equals(u.getUsername())
+							&& password.equals(u.getPassword())){
+						valid = true;
+						userModel = u;
+						break;
+					}
+				}
 			}
 		}
 		
