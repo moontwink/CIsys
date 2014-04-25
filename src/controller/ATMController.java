@@ -45,7 +45,7 @@ public class ATMController {
 		});
 	}
 
-	public void inquireBalance() {
+	public void inquireBalance() { 
 		atmView.getSavingsField().setText(userModel.getSavingsAccount().getBalance()+"");
 		atmView.getBusinessField().setText(userModel.getBusinessAccount().getBalance()+"");
 		atmView.getCheckingsField().setText(userModel.getCheckingsAccount().getBalance()+"");
