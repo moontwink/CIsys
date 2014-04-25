@@ -18,7 +18,7 @@ import controller.LogInController;
 public class InquireBalanceTest {
 
 	@Test
-	public void InquireSavingsBalanceValid() throws ClassNotFoundException, SQLException {
+	public void inquireSavingsBalanceValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
@@ -35,7 +35,7 @@ public class InquireBalanceTest {
 		assertEquals(userModel.getSavingsAccount().getBalance(), Double.parseDouble(atmView.getSavingsField().getText()),0);
 	}
 	
-	public void InquireCheckingsBalanceValid() throws ClassNotFoundException, SQLException {
+	public void inquireCheckingsBalanceValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
@@ -52,7 +52,7 @@ public class InquireBalanceTest {
 		assertEquals(userModel.getCheckingsAccount().getBalance(), Double.parseDouble(atmView.getCheckingsField().getText()),0);
 	}
 	
-	public void InquireBusinessBalanceValid() throws ClassNotFoundException, SQLException {
+	public void inquireBusinessBalanceValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
