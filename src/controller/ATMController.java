@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import database.AccountHandler;
 import model.TransactionType;
 import model.UserModel;
 import view.ATMView;
@@ -17,6 +18,8 @@ public class ATMController {
 		this.userModel = userModel;
 		
 		atmView.getWelcomeLabel().setText("Welcome, " + userModel.getFirstName() +" "+ userModel.getLastName() +"!");
+		AccountHandler accountHandler = new AccountHandler();
+		this.userModel = accountHandler.initAccount(userModel);
 		
 		atmView.getBtnInquireBalance().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

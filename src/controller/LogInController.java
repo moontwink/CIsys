@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 import database.DBConnection;
+import database.UserHandler;
 import model.BusinessAccount;
 import model.CheckingsAccount;
 import model.SavingsAccount;
@@ -31,12 +32,11 @@ import view.LogInView;
 public class LogInController {
 	private UserModel userModel;
 	private LogInView logInView;
-	private DBConnection dbConnection;
-	List<UserModel> userModelList;
 	
 	public LogInController(UserModel userModel, final LogInView logInView){
 		this.userModel = userModel;
 		this.logInView = logInView;
+<<<<<<< HEAD
 		dbConnection = new DBConnection();
 		userModelList = new ArrayList<UserModel>();
 		getAllUsers(this.userModelList);
@@ -86,6 +86,11 @@ public class LogInController {
 		dbConnection.disconnect();
 	}
 
+=======
+		createListeners();
+	}
+
+>>>>>>> f6a6cf88d8945b55d21fd4bdae321a801f8bcdd1
 	private void createListeners() {
 		int condition = JComponent.WHEN_FOCUSED;
 		InputMap iMap = logInView.getPasswordField().getInputMap(condition);
@@ -131,13 +136,24 @@ public class LogInController {
 	public boolean checkIfValidCredentials(List<UserModel> userModelList, String username, String password){
 		boolean valid = false;
 		
+<<<<<<< HEAD
 		for(int index = 0; index < userModelList.size(); index++){
 			System.out.println(userModelList.get(index).getUsername());
 			System.out.println(userModelList.get(index).getPassword());
 			if(username.equals(userModelList.get(index).getUsername()) 
 					&& password.equals(userModelList.get(index).getPassword())){
+=======
+		String username = logInView.getUserTxtField();
+		String password = logInView.getPasswordTxtField();
+		
+		UserHandler userHandler = new UserHandler();
+		for(UserModel u : userHandler.getAllUsers()){
+			
+			if(username.equals(u.getUsername())
+					&& password.equals(u.getPassword())){
+>>>>>>> f6a6cf88d8945b55d21fd4bdae321a801f8bcdd1
 				valid = true;
-				userModel = userModelList.get(index);
+				userModel = u;
 				break;
 			}
 		}

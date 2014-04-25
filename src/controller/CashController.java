@@ -39,6 +39,15 @@ public class CashController {
 		aMap.put(enter, new AbstractAction() {
 			
 			public void actionPerformed(ActionEvent e) {
+				switch(type){
+					case DEPOSIT: 
+						
+						break;
+					case WITHDRAW: 
+						break;
+				
+				}
+				
 				JOptionPane.showMessageDialog(new JFrame(),
 					    "Transaction Successful!",
 					    "Transaction",
