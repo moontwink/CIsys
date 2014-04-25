@@ -24,9 +24,7 @@ public class ATMController {
 		atmView.getBtnInquireBalance().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				atmView.getBalancePanel().setVisible(true);
-				atmView.getSavingsField().setText("PHP " + userModel.getSavingsAccount().getBalance());
-				atmView.getBusinessField().setText("PHP " + userModel.getBusinessAccount().getBalance());
-				atmView.getCheckingsField().setText("PHP " + userModel.getCheckingsAccount().getBalance());
+				inquireBalance();
 			}
 		});
 		
@@ -45,8 +43,12 @@ public class ATMController {
 				CashController cashController = new CashController(new CashView(), userModel, TransactionType.DEPOSIT);
 			}
 		});
-		
-		
+	}
+
+	public void inquireBalance() {
+		atmView.getSavingsField().setText(userModel.getSavingsAccount().getBalance()+"");
+		atmView.getBusinessField().setText(userModel.getBusinessAccount().getBalance()+"");
+		atmView.getCheckingsField().setText(userModel.getCheckingsAccount().getBalance()+"");
 	}
 //	
 //	private void disableButtons(){
