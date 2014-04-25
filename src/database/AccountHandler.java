@@ -42,35 +42,6 @@ public class AccountHandler {
 		return useraccount; 
 	}
 	
-	public UserModel getAccount(UserModel user){
-		UserModel useraccount = user;
-		
-		try { 
-			Connection c = DBConnection.getConnection();
-			PreparedStatement ps = c.prepareStatement("SELECT * FROM user_accounts WHERE user_accounts_id = " + user.getId());
-			
-			ResultSet rs = ps.executeQuery();
-			rs.next();
-			useraccount = new UserModel();
-			
-			useraccount.setSavingsAccount(new SavingsAccount(rs.getDouble(2)));
-			useraccount.setBusinessAccount(new BusinessAccount(rs.getDouble(3)));
-			useraccount.setCheckingsAccount(new CheckingsAccount(rs.getDouble(4)));
-			
-			rs.close();
-			ps.close();
-			c.close();
-			
-	    } catch (SQLException e) { 
-	    	Logger.getLogger(AccountHandler.class.getName()).log(Level.SEVERE, null, e);
-	    } catch (ClassNotFoundException e) {
-	    	Logger.getLogger(AccountHandler.class.getName()).log(Level.SEVERE, null, e);
-		}
-		
-		return useraccount; 
-	}
-	
-	
 	public int depositCash(Double depositAmt, UserModel user, AccountType accountType){
 		String accountAttribute = "";
 		Double accountBalance = 0.0;
