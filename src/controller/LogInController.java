@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
@@ -62,7 +64,7 @@ public class LogInController {
 				userModelList.add(userModel);
 			}
 	    } catch (SQLException e) { 
-	    	e.printStackTrace(); 
+	    	Logger.getLogger(LogInController.class.getName()).log(Level.SEVERE, null, e);
 	    } 
 		
 		try { 
@@ -77,7 +79,7 @@ public class LogInController {
 				userModelList.get(i).setCheckingsAccount(new CheckingsAccount(rs.getDouble(4)));
 			}
 	    } catch (SQLException e) { 
-	    	e.printStackTrace(); 
+	    	Logger.getLogger(LogInController.class.getName()).log(Level.SEVERE, null, e);
 	    } 
 	
 		dbConnection.closeConnection(conn);

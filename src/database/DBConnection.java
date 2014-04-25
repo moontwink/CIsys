@@ -4,6 +4,10 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import controller.LogInController;
 
 public class DBConnection {
 	static String driver = "com.mysql.jdbc.Driver";
@@ -23,7 +27,7 @@ public class DBConnection {
         try {
             c.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+        	Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 	

@@ -63,6 +63,8 @@ public class AccountHandler {
 					accountAttribute = "savings_account_balance";
 					accountBalance = user.getSavingsAccount().getBalance();
 					break;
+				default:
+					break;
 			}
 			
 			PreparedStatement ps = c.prepareStatement("UPDATE user_accounts SET `" + accountAttribute 
@@ -103,11 +105,14 @@ public class AccountHandler {
 					accountAttribute = "savings_account_balance";
 					accountBalance = user.getSavingsAccount().getBalance();
 					break;
+				default:
+					break;
 			}
 			
 			Double newAmount = subtractCash(accountBalance, withdrawAmt);
-			if(newAmount == -1.0)
+			if(newAmount == -1.0) {
 				throw new WithdrawalException();
+			}
 			
 			PreparedStatement ps = c.prepareStatement("UPDATE user_accounts SET `" + accountAttribute 
 					+ "` = " + newAmount + " WHERE `user_accounts_id` = " + user.getId());
@@ -131,8 +136,9 @@ public class AccountHandler {
 	}
 	
 	private Double subtractCash(Double amount1, Double amount2){
-		if(amount1 < amount2)
+		if(amount1 < amount2) {
 			return -1.0;
+		}
 		return amount1 - amount2;
 	}
 }
