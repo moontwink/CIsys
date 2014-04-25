@@ -30,7 +30,7 @@ import view.ATMView;
 import view.LogInView;
 
 public class LogInController {
-	private UserModel userModel;
+	private static UserModel userModel;
 	private LogInView logInView;
 	
 	public LogInController(UserModel userModel, final LogInView logInView){
@@ -101,7 +101,7 @@ public class LogInController {
 		return valid;
 	}
 	
-	private void createATMController(){
+	public static void createATMController(){
 		ATMView atmView = new ATMView();
 		ATMController atmController = new ATMController(atmView, userModel);
 	}

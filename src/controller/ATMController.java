@@ -32,7 +32,7 @@ public class ATMController {
 		
 		atmView.getBtnWithdraw().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				atmView.getButtonsPanel().setEnabled(false);
+				atmView.getATMJFrame().dispose();
 				@SuppressWarnings("unused")
 				CashController cashController = new CashController(new CashView(), userModel, TransactionType.WITHDRAW);
 			}
@@ -40,10 +40,24 @@ public class ATMController {
 		
 		atmView.getBtnDeposit().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				atmView.getButtonsPanel().setEnabled(false);
+				atmView.getATMJFrame().dispose();
 				@SuppressWarnings("unused")
 				CashController cashController = new CashController(new CashView(), userModel, TransactionType.DEPOSIT);
 			}
 		});
+		
+		
 	}
+//	
+//	private void disableButtons(){
+//		atmView.getBtnInquireBalance().setEnabled(false);
+//		atmView.getBtnDeposit().setEnabled(false);
+//		atmView.getBtnWithdraw().setEnabled(false);
+//	}
+//	
+//	public void enableButtons(){
+//		atmView.getBtnInquireBalance().setEnabled(true);
+//		atmView.getBtnDeposit().setEnabled(true);
+//		atmView.getBtnWithdraw().setEnabled(true);
+//	}
 }

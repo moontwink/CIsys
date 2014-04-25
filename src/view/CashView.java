@@ -17,16 +17,20 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JRadioButton;
 
+import model.AccountType;
+
 public class CashView {
+	private JFrame jframe;
 	private JPanel cashPanel;
 	private JTextField cashField;
 	private JButton btnEnter;
+	ButtonGroup btnGroup;
 	private JRadioButton rdbtnSavings;
 	private JRadioButton rdbtnCheckings;
 	private JRadioButton rdbtnBusiness;
 	
 	public CashView(){
-		JFrame jframe = new JFrame();
+		jframe = new JFrame();
 		jframe.setSize(new Dimension(420, 175));
 		jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
@@ -53,6 +57,7 @@ public class CashView {
 		cashPanel.add(currencyBox);
 		
 		rdbtnSavings = new JRadioButton("SAVINGS");
+		rdbtnSavings.setSelected(true);
 		rdbtnSavings.setBounds(24, 23, 104, 23);
 		cashPanel.add(rdbtnSavings);
 		
@@ -64,7 +69,7 @@ public class CashView {
 		rdbtnBusiness.setBounds(272, 23, 104, 23);
 		cashPanel.add(rdbtnBusiness);
 		
-		ButtonGroup btnGroup = new ButtonGroup();
+		btnGroup = new ButtonGroup();
 		btnGroup.add(rdbtnBusiness);
 		btnGroup.add(rdbtnCheckings);
 		btnGroup.add(rdbtnSavings);
@@ -72,6 +77,10 @@ public class CashView {
 	
 	public JButton getBtnEnter(){
 		return btnEnter;
+	}
+	
+	public JFrame getJFrame(){
+		return jframe;
 	}
 	
 	public JPanel getCashPanel(){
@@ -82,15 +91,14 @@ public class CashView {
 		return cashField;
 	}
 
-	public String getSelectedValue() {
-		String selectedAccount = "";
+	public AccountType getSelectedValue() {
 		if(rdbtnSavings.isSelected()){
-			selectedAccount = "savings";
+			return AccountType.SAVINGS;
 		} else if(rdbtnCheckings.isSelected()){
-			selectedAccount = "checkings";
+			return AccountType.CHECKINGS;
 		} else if(rdbtnBusiness.isSelected()){
-			selectedAccount = "business";
+			return AccountType.BUSINESS;
 		}
-		return selectedAccount;
+		return AccountType.SAVINGS;
 	}
 }

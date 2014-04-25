@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class ATMView {
+	private JFrame jframe;
 	private JTextField savingsField;
 	private JTextField checkingsField;
 	private JTextField businessField;
@@ -27,7 +28,7 @@ public class ATMView {
 	private JPanel buttonsPanel;
 	
 	public ATMView() {
-		JFrame jframe = new JFrame();
+		jframe = new JFrame();
 		jframe.setSize(new Dimension(600, 360));
 		jframe.setVisible(true);
 		jframe.setLocationRelativeTo(null);
@@ -159,5 +160,9 @@ public class ATMView {
 
 	public void setBusinessField(JTextField businessField) {
 		this.businessField = businessField;
+	}
+	
+	public JFrame getATMJFrame(){
+		return jframe;
 	}
 }
