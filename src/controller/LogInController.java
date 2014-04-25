@@ -131,8 +131,6 @@ public class LogInController {
 		boolean valid = false;
 		
 		for(int index = 0; index < userModelList.size(); index++){
-			System.out.println(userModelList.get(index).getUsername());
-			System.out.println(userModelList.get(index).getPassword());
 			if(username.equals(userModelList.get(index).getUsername()) 
 					&& password.equals(userModelList.get(index).getPassword())){
 				UserHandler userHandler = new UserHandler();
@@ -152,6 +150,6 @@ public class LogInController {
 	
 	public static void createATMController(){
 		ATMView atmView = new ATMView();
-		ATMController atmController = new ATMController(atmView, userModel);
+		new ATMController(atmView, userModel);
 	}
 }

@@ -11,6 +11,6 @@ public class Main {
 		UserModel userModel = new UserModel();
 		LogInView logInView = new LogInView();
 		
-		LogInController logInController = new LogInController(userModel, logInView);		
+		new LogInController(userModel, logInView);		
 	}
 }
