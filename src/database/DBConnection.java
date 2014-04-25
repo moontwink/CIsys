@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import com.mysql.jdbc.CommunicationsException;
+
 public class DBConnection {
 	static String driver = "com.mysql.jdbc.Driver";
     static String url = "jdbc:mysql://localhost:3306/";
@@ -16,8 +21,15 @@ public class DBConnection {
     
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName(driver);
-        Connection connection = DriverManager.getConnection(url+dbName, username, password);
-			
+        Connection connection = null;
+        try {
+        	connection = DriverManager.getConnection(url+dbName, username, password);
+        } catch(CommunicationsException ex) {
+        	JOptionPane.showMessageDialog(new JFrame(),
+				    "Disconnected from Database",
+				    "Communications Error",
+				    JOptionPane.ERROR_MESSAGE);
+        }
         return connection;
     }
     
