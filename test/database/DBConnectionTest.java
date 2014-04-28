@@ -15,6 +15,8 @@ import org.junit.Test;
 
 import com.mysql.jdbc.CommunicationsException;
 
+import database.DBConnection;
+
 public class DBConnectionTest {
 
 	@Test

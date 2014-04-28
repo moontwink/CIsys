@@ -12,12 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import model.AccountType;
-import model.TransactionType;
-import model.UserModel;
 import view.CashView;
 import database.AccountHandler;
 import exception.WithdrawalException;
+import model.AccountType;
+import model.TransactionType;
+import model.UserModel;
 
 public class CashController {
 	private CashView cashView;

@@ -12,6 +12,8 @@ import org.junit.Test;
 
 import view.ATMView;
 import view.LogInView;
+import controller.ATMController;
+import controller.LogInController;
 
 
 public class ATMControllerTest {

@@ -10,6 +10,7 @@ import model.UserModel;
 
 import org.junit.Test;
 
+import database.AccountHandler;
 import exception.WithdrawalException;
 
 public class AccountHandlerTest {

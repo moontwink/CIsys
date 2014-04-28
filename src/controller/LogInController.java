@@ -20,14 +20,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import model.BusinessAccount;
-import model.CheckingsAccount;
-import model.SavingsAccount;
-import model.UserModel;
 import view.ATMView;
 import view.LogInView;
 import database.DBConnection;
 import database.UserHandler;
+import model.BusinessAccount;
+import model.CheckingsAccount;
+import model.SavingsAccount;
+import model.UserModel;
 
 public class LogInController {
 	private static UserModel userModel;
