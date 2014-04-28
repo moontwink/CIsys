@@ -37,7 +37,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
     	<artifactId>jacoco-maven-plugin</artifactId>
-    	<version>0.7.0.201403182114</version>
+    	<version>0.6.3.201306030806</version>
     	<executions>
 	        <!--
 	           Prepares the property pointing to the JaCoCo runtime agent which
@@ -96,7 +96,7 @@
   	<dependency>
   		<groupId>org.jacoco</groupId>
   		<artifactId>jacoco-maven-plugin</artifactId>
-  		<version>0.7.0.201403182114</version>
+  		<version>0.6.3.201306030806</version>
   		<type>maven-plugin</type>
   	</dependency>
   </dependencies>
