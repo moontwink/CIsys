@@ -1,4 +1,4 @@
-package test;
+package controller;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
 import view.LogInView;
 import controller.LogInController;
 
-public class LogInTest {
+public class LogInControllerTest {
 
 	@Test
 	public void logInValid() throws ClassNotFoundException, SQLException {
