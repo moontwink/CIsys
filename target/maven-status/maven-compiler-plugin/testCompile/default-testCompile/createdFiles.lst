@@ -1,4 +1,2 @@
 database\AccountHandlerTest.class
 database\DBConnectionTest.class
-controller\ATMControllerTest.class
-controller\LogInControllerTest.class
