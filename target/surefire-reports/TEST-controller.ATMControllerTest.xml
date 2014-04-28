@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="database.DBConnectionTest" time="0.073" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="controller.ATMControllerTest" time="14.749" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0\jre\bin"/>
@@ -64,7 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testGetConnection" classname="database.DBConnectionTest" time="0"/>
-  <testcase name="testGetConnectionWithSQLEx" classname="database.DBConnectionTest" time="0.043"/>
-  <testcase name="testCloseConnection" classname="database.DBConnectionTest" time="0.03"/>
+  <testcase name="inquireSavingsBalanceValid" classname="controller.ATMControllerTest" time="13.533"/>
+  <testcase name="inquireCheckingsBalanceValid" classname="controller.ATMControllerTest" time="0.648"/>
+  <testcase name="inquireBusinessBalanceValid" classname="controller.ATMControllerTest" time="0.568"/>
 </testsuite>
