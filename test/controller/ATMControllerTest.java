@@ -1,6 +1,6 @@
-package test;
+package controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,10 +12,9 @@ import org.junit.Test;
 
 import view.ATMView;
 import view.LogInView;
-import controller.ATMController;
-import controller.LogInController;
 
-public class InquireBalanceTest {
+
+public class ATMControllerTest {
 
 	@Test
 	public void inquireSavingsBalanceValid() throws ClassNotFoundException, SQLException {
@@ -35,6 +34,7 @@ public class InquireBalanceTest {
 		assertEquals(userModel.getSavingsAccount().getBalance(), Double.parseDouble(atmView.getSavingsField().getText()),0);
 	}
 	
+	@Test
 	public void inquireCheckingsBalanceValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
@@ -52,6 +52,7 @@ public class InquireBalanceTest {
 		assertEquals(userModel.getCheckingsAccount().getBalance(), Double.parseDouble(atmView.getCheckingsField().getText()),0);
 	}
 	
+	@Test
 	public void inquireBusinessBalanceValid() throws ClassNotFoundException, SQLException {
 		List<UserModel> userModelList = new ArrayList<UserModel>();
 		UserModel userModel = new UserModel();
