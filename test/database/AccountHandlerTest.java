@@ -1,7 +1,6 @@
 package database;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 import model.AccountType;
 import model.BusinessAccount;
 import model.CheckingsAccount;
@@ -10,24 +9,9 @@ import model.UserModel;
 
 import org.junit.Test;
 
-import database.AccountHandler;
 import exception.WithdrawalException;
 
 public class AccountHandlerTest {
-
-	@Test(expected = NullPointerException.class)
-	public void testInitAccount() {
-		AccountHandler accountHandler = new AccountHandler();
-		accountHandler.initAccount(null);
-	}
-	
-	@Test
-	public void testInitAccountReturn() {
-		UserModel user = new UserModel("Nancy", "Naval", "moontwink", "helloworld");
-		AccountHandler accountHandler = new AccountHandler();
-		UserModel newuser = accountHandler.initAccount(user);
-		assertSame(user, newuser);
-	}
 
 	@Test
 	public void testDepositCash() {
