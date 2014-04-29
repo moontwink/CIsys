@@ -22,7 +22,7 @@ public class DBConnectionTest {
 	@Test
 	public void testGetConnection() throws ClassNotFoundException  {
 		String driver = "com.mysql.jdbc.Driver";
-	    Class.forName(driver);
+	    assertNotNull(Class.forName(driver));
 	}
 
 	@Test
