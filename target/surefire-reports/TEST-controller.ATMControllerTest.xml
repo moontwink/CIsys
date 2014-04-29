@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="controller.ATMControllerTest" time="2.19" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="controller.ATMControllerTest" time="26.352" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="c:\Program Files\Java\jdk1.8.0\jre\bin"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="inquireSavingsBalanceValid" classname="controller.ATMControllerTest" time="1.447"/>
-  <testcase name="inquireCheckingsBalanceValid" classname="controller.ATMControllerTest" time="0.32"/>
-  <testcase name="inquireBusinessBalanceValid" classname="controller.ATMControllerTest" time="0.423"/>
+  <testcase name="inquireSavingsBalanceValid" classname="controller.ATMControllerTest" time="22.889"/>
+  <testcase name="inquireCheckingsBalanceValid" classname="controller.ATMControllerTest" time="2.855"/>
+  <testcase name="inquireBusinessBalanceValid" classname="controller.ATMControllerTest" time="0.608"/>
 </testsuite>
