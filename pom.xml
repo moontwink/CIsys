@@ -69,24 +69,6 @@
 	    <version>4.7</version>
 	    <scope>test</scope>
     </dependency>
-    
-    <dependency>
-    	<groupId>org.ow2.asm</groupId>
-    	<artifactId>asm-analysis</artifactId>
-    	<version>5.0.2</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.ow2.asm</groupId>
-    	<artifactId>asm-commons</artifactId>
-    	<version>5.0.2</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.ow2.asm</groupId>
-    	<artifactId>asm-util</artifactId>
-    	<version>5.0.2</version>
-    </dependency>
   </dependencies>
   
 
