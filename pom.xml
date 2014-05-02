@@ -69,10 +69,6 @@
 	    <version>4.7</version>
 	    <scope>test</scope>
     </dependency>
-<<<<<<< HEAD
-=======
-  	
->>>>>>> parent of d2f4cf2... Added asm in pom.xml
   </dependencies>
   
   <profiles>
