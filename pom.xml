@@ -71,7 +71,7 @@
     </dependency>
     
     <dependency>
-		<groupId>asm</groupId>
+		<groupId>org.ow2.asm</groupId>
 		<artifactId>asm-all</artifactId>
 		<version>5.0.2</version>
 	</dependency>
