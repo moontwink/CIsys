@@ -69,8 +69,27 @@
 	    <version>4.7</version>
 	    <scope>test</scope>
     </dependency>
+    
+    <dependency>
+    	<groupId>org.ow2.asm</groupId>
+    	<artifactId>asm-analysis</artifactId>
+    	<version>${asm.version}</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.ow2.asm</groupId>
+    	<artifactId>asm-commons</artifactId>
+    	<version>${asm.version}</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.ow2.asm</groupId>
+    	<artifactId>asm-util</artifactId>
+    	<version>${asm.version}</version>
+    </dependency>
   </dependencies>
   
+
   <profiles>
         <!-- Jenkins by default defines a property BUILD_NUMBER which is used to enable the profile. -->
         <profile>
