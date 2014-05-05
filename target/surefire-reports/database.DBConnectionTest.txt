@@ -1,4 +1,52 @@
 -------------------------------------------------------------------------------
 Test set: database.DBConnectionTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec - in database.DBConnectionTest
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.094 sec <<< FAILURE! - in database.DBConnectionTest
+testGetConnectionWithSQLEx(database.DBConnectionTest)  Time elapsed: 0.039 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 106
+Exception Details:
+  Location:
+    database/DBConnection.getConnection()Ljava/sql/Connection; @43: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033b 11ff ff3c b800 1512 17b6 001b 1100
+    0000010: 17b6 0021 b200 32b8 0038 57b8 0015 1217
+    0000020: b600 1b11 0018 b600 2101 4db8 0015 1217
+    0000030: b600 1b11 001a b600 21bb 003a 59b7 003b
+    0000040: b200 3db6 0041 b200 43b6 0041 b600 47b2
+    0000050: 0049 b200 4bb8 0050 4db8 0015 1217 b600
+    0000060: 1b11 0020 b600 21a7 002f b800 1512 17b6
+    0000070: 001b 1100 1bb6 0021 4eb8 0015 1217 b600
+    0000080: 1b11 001c b600 21bb 0052 59b7 0053 1255
+    0000090: 1257 03b8 005d b800 1512 17b6 001b 1100
+    00000a0: 21b6 0021 2cb0                         
+  Exception Handler Table:
+    bci [43, 89] => handler: 106
+
+	at database.DBConnectionTest.testGetConnectionWithSQLEx(DBConnectionTest.java:37)
+
+testCloseConnection(database.DBConnectionTest)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 106
+Exception Details:
+  Location:
+    database/DBConnection.getConnection()Ljava/sql/Connection; @43: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033b 11ff ff3c b800 1512 17b6 001b 1100
+    0000010: 17b6 0021 b200 32b8 0038 57b8 0015 1217
+    0000020: b600 1b11 0018 b600 2101 4db8 0015 1217
+    0000030: b600 1b11 001a b600 21bb 003a 59b7 003b
+    0000040: b200 3db6 0041 b200 43b6 0041 b600 47b2
+    0000050: 0049 b200 4bb8 0050 4db8 0015 1217 b600
+    0000060: 1b11 0020 b600 21a7 002f b800 1512 17b6
+    0000070: 001b 1100 1bb6 0021 4eb8 0015 1217 b600
+    0000080: 1b11 001c b600 21bb 0052 59b7 0053 1255
+    0000090: 1257 03b8 005d b800 1512 17b6 001b 1100
+    00000a0: 21b6 0021 2cb0                         
+  Exception Handler Table:
+    bci [43, 89] => handler: 106
+
+	at database.DBConnectionTest.testCloseConnection(DBConnectionTest.java:46)
+

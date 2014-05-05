@@ -1,68 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="controller.ATMControllerTest" time="4.812" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="controller.ATMControllerTest" time="2.292" tests="3" errors="3" skipped="0" failures="0">
   <properties>
+    <property name="http.agent" value="Sonar Maven/3.2.1"/>
+    <property name="ROOT_LOGGER_LEVEL" value="INFO"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin"/>
-    <property name="java.vm.version" value="25.5-b02"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0\jre\bin"/>
+    <property name="java.vm.version" value="25.0-b70"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\trodrigu\Documents\GitHub\CIsys"/>
-    <property name="java.runtime.version" value="1.8.0_05-b13"/>
+    <property name="user.dir" value="C:\Users\nannaval\Documents\GitHub\CIsys"/>
+    <property name="java.runtime.version" value="1.8.0-b132"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\endorsed"/>
-    <property name="os.arch" value="x86"/>
-    <property name="java.io.tmpdir" value="C:\Users\trodrigu\AppData\Local\Temp\"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Windows\TEMP\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Program Files (x86)\Apache\apache-maven-3.2.1-bin\apache-maven-3.2.1\bin\m2.conf"/>
+    <property name="net.sourceforge.cobertura.datafile" value="C:\Users\nannaval\Documents\GitHub\CIsys\target\cobertura\cobertura.ser"/>
+    <property name="classworlds.conf" value="C:\Program Files\Apache Software Foundation\apache-maven-3.2.1\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_05\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\EMULATOR;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\SHARED;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\;C:\Program Files\Symantec\Workspace Virtualization\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.3.6\;C:\Program Files (x86)\Apache\apache-maven-3.2.1-bin\apache-maven-3.2.1\bin;C:\Program Files (x86)\Java\jdk1.8.0_05\bin;C:\Program Files (x86)\Java\jre8\bin;C:\Program Files (x86)\Apache\apache-maven-3.2.1-bin\apache-maven-3.2.1\bin;."/>
+    <property name="sonar.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0\bin;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\EMULATOR;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\SHARED;C:\PROGRAM FILES (X86)\IBM\CLIENT ACCESS\;C:\Program Files\Symantec\Workspace Virtualization\;C:\Program Files (x86)\MySQL\MySQL Server 5.6\bin;C:\Program Files\Apache Software Foundation\apache-maven-3.2.1\bin;C:\Program Files (x86)\Git\bin;C:\sonar\sonar-runner-2.3\bin;.;C:\Program Files\Apache Software Foundation\apache-ant-1.9.3\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
-    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="6.1"/>
-    <property name="user.home" value="C:\Users\trodrigu"/>
+    <property name="user.home" value="C:\Windows\system32\config\systemprofile"/>
     <property name="user.timezone" value="Asia/Shanghai"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="trodrigu"/>
-    <property name="java.class.path" value="C:\Program Files (x86)\Apache\apache-maven-3.2.1-bin\apache-maven-3.2.1\boot\plexus-classworlds-2.5.1.jar"/>
+    <property name="sonar.jdbc.url" value="jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true"/>
+    <property name="user.name" value="MAN-DB1SR72S$"/>
+    <property name="java.class.path" value="C:\Program Files\Apache Software Foundation\apache-maven-3.2.1\boot\plexus-classworlds-2.5.1.jar"/>
     <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
     <property name="java.vm.specification.version" value="1.8"/>
-    <property name="sun.arch.data.model" value="32"/>
-    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.8.0_05\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install -U"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -f C:\Users\nannaval\Documents\GitHub\CIsys\pom.xml -e -B sonar:sonar -Dsonar.jdbc.driver=com.mysql.jdbc.Driver -Dsonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_05"/>
-    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_05\jre\classes"/>
-    <property name="sun.stderr.encoding" value="cp437"/>
+    <property name="java.version" value="1.8.0"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Program Files (x86)\Apache\apache-maven-3.2.1-bin\apache-maven-3.2.1"/>
+    <property name="maven.home" value="C:\Program Files\Apache Software Foundation\apache-maven-3.2.1"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.stdout.encoding" value="cp437"/>
+    <property name="project.build.outputDirectory" value="C:\Users\nannaval\Documents\GitHub\CIsys\target\generated-classes\cobertura"/>
     <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="inquireSavingsBalanceValid" classname="controller.ATMControllerTest" time="4.381"/>
-  <testcase name="inquireCheckingsBalanceValid" classname="controller.ATMControllerTest" time="0.179"/>
-  <testcase name="inquireBusinessBalanceValid" classname="controller.ATMControllerTest" time="0.252"/>
+  <testcase name="inquireSavingsBalanceValid" classname="controller.ATMControllerTest" time="2.289">
+    <error message="Expecting a stackmap frame at branch target 421&#10;Exception Details:&#10;  Location:&#10;    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100&#10;    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026&#10;    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05&#10;    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4&#10;    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026&#10;    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8&#10;    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619&#10;    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026&#10;    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038&#10;    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d&#10;    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8&#10;    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819&#10;    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6&#10;    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073&#10;    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c&#10;    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a&#10;    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908&#10;    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222&#10;    0000140: b600 2611 003e b600 2c19 0819 0708 b900&#10;    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100&#10;    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020&#10;    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b&#10;    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065&#10;    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6&#10;    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042&#10;    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043&#10;    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119&#10;    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6&#10;    00001e0: 002c 0336 0615 062b b900 a001 0011 0048&#10;    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d&#10;    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6&#10;    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0&#10;    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026&#10;    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8&#10;    0000260: 0020 1222 b600 2611 004b b600 2c19 0819&#10;    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026&#10;    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800&#10;    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9&#10;    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900&#10;    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600&#10;    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0&#10;    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700&#10;    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6&#10;    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc&#10;    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8&#10;    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601&#10;    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c&#10;    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600&#10;    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6&#10;    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6&#10;    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092&#10;    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600&#10;    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800&#10;    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1&#10;    00003a0:                                        &#10;  Exception Handler Table:&#10;    bci [48, 382] =&gt; handler: 421&#10;    bci [468, 803] =&gt; handler: 842&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 421
+Exception Details:
+  Location:
+    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100
+    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026
+    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05
+    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4
+    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026
+    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8
+    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619
+    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026
+    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038
+    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d
+    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8
+    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819
+    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6
+    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073
+    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c
+    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a
+    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908
+    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222
+    0000140: b600 2611 003e b600 2c19 0819 0708 b900
+    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100
+    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020
+    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b
+    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065
+    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6
+    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042
+    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043
+    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119
+    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6
+    00001e0: 002c 0336 0615 062b b900 a001 0011 0048
+    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d
+    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6
+    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0
+    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026
+    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8
+    0000260: 0020 1222 b600 2611 004b b600 2c19 0819
+    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026
+    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800
+    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9
+    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900
+    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600
+    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0
+    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700
+    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6
+    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc
+    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8
+    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601
+    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c
+    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600
+    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6
+    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6
+    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092
+    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600
+    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800
+    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1
+    00003a0:                                        
+  Exception Handler Table:
+    bci [48, 382] => handler: 421
+    bci [468, 803] => handler: 842
+
+	at controller.ATMControllerTest.inquireSavingsBalanceValid(ATMControllerTest.java:28)
+</error>
+  </testcase>
+  <testcase name="inquireCheckingsBalanceValid" classname="controller.ATMControllerTest" time="0.003">
+    <error message="Expecting a stackmap frame at branch target 421&#10;Exception Details:&#10;  Location:&#10;    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100&#10;    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026&#10;    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05&#10;    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4&#10;    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026&#10;    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8&#10;    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619&#10;    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026&#10;    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038&#10;    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d&#10;    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8&#10;    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819&#10;    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6&#10;    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073&#10;    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c&#10;    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a&#10;    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908&#10;    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222&#10;    0000140: b600 2611 003e b600 2c19 0819 0708 b900&#10;    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100&#10;    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020&#10;    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b&#10;    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065&#10;    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6&#10;    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042&#10;    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043&#10;    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119&#10;    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6&#10;    00001e0: 002c 0336 0615 062b b900 a001 0011 0048&#10;    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d&#10;    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6&#10;    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0&#10;    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026&#10;    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8&#10;    0000260: 0020 1222 b600 2611 004b b600 2c19 0819&#10;    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026&#10;    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800&#10;    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9&#10;    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900&#10;    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600&#10;    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0&#10;    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700&#10;    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6&#10;    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc&#10;    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8&#10;    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601&#10;    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c&#10;    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600&#10;    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6&#10;    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6&#10;    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092&#10;    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600&#10;    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800&#10;    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1&#10;    00003a0:                                        &#10;  Exception Handler Table:&#10;    bci [48, 382] =&gt; handler: 421&#10;    bci [468, 803] =&gt; handler: 842&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 421
+Exception Details:
+  Location:
+    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100
+    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026
+    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05
+    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4
+    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026
+    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8
+    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619
+    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026
+    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038
+    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d
+    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8
+    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819
+    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6
+    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073
+    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c
+    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a
+    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908
+    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222
+    0000140: b600 2611 003e b600 2c19 0819 0708 b900
+    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100
+    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020
+    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b
+    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065
+    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6
+    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042
+    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043
+    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119
+    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6
+    00001e0: 002c 0336 0615 062b b900 a001 0011 0048
+    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d
+    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6
+    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0
+    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026
+    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8
+    0000260: 0020 1222 b600 2611 004b b600 2c19 0819
+    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026
+    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800
+    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9
+    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900
+    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600
+    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0
+    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700
+    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6
+    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc
+    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8
+    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601
+    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c
+    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600
+    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6
+    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6
+    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092
+    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600
+    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800
+    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1
+    00003a0:                                        
+  Exception Handler Table:
+    bci [48, 382] => handler: 421
+    bci [468, 803] => handler: 842
+
+	at controller.ATMControllerTest.inquireCheckingsBalanceValid(ATMControllerTest.java:47)
+</error>
+  </testcase>
+  <testcase name="inquireBusinessBalanceValid" classname="controller.ATMControllerTest" time="0">
+    <error message="Expecting a stackmap frame at branch target 421&#10;Exception Details:&#10;  Location:&#10;    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100&#10;    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026&#10;    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05&#10;    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4&#10;    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026&#10;    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8&#10;    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619&#10;    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026&#10;    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038&#10;    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d&#10;    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8&#10;    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819&#10;    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6&#10;    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073&#10;    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c&#10;    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a&#10;    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908&#10;    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222&#10;    0000140: b600 2611 003e b600 2c19 0819 0708 b900&#10;    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100&#10;    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020&#10;    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b&#10;    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065&#10;    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6&#10;    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042&#10;    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043&#10;    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119&#10;    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6&#10;    00001e0: 002c 0336 0615 062b b900 a001 0011 0048&#10;    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d&#10;    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d&#10;    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026&#10;    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6&#10;    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0&#10;    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026&#10;    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8&#10;    0000260: 0020 1222 b600 2611 004b b600 2c19 0819&#10;    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026&#10;    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800&#10;    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9&#10;    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900&#10;    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600&#10;    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0&#10;    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700&#10;    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6&#10;    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc&#10;    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8&#10;    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601&#10;    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c&#10;    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600&#10;    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6&#10;    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6&#10;    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092&#10;    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600&#10;    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800&#10;    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1&#10;    00003a0:                                        &#10;  Exception Handler Table:&#10;    bci [48, 382] =&gt; handler: 421&#10;    bci [468, 803] =&gt; handler: 842&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 421
+Exception Details:
+  Location:
+    controller/LogInController.getAllUsers(Ljava/util/List;)V @48: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033d 11ff ff3e b800 2012 22b6 0026 1100
+    0000010: 2fb6 002c 124b 3a04 b800 2012 22b6 0026
+    0000020: 1100 31b6 002c 2ab4 0038 57b8 004f 3a05
+    0000030: b800 2012 22b6 0026 1100 34b6 002c 2ab4
+    0000040: 0038 57b8 004f 3a05 b800 2012 22b6 0026
+    0000050: 1100 35b6 002c 1905 b900 5501 003a 06b8
+    0000060: 0020 1222 b600 2611 0036 b600 2c19 0619
+    0000070: 04b9 005b 0200 3a07 b800 2012 22b6 0026
+    0000080: 1100 38b6 002c 1907 b900 6101 0011 0038
+    0000090: 3d11 0000 3e99 00e9 1c11 0038 a000 1c1d
+    00000a0: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    00000b0: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    00000c0: 1100 39b6 002c bb00 6759 b700 683a 08b8
+    00000d0: 0020 1222 b600 2611 003a b600 2c19 0819
+    00000e0: 0704 b900 6c02 00b6 006f b800 2012 22b6
+    00000f0: 0026 1100 3bb6 002c 1908 1907 05b9 0073
+    0000100: 0200 b600 77b8 0020 1222 b600 2611 003c
+    0000110: b600 2c19 0819 0706 b900 7302 00b6 007a
+    0000120: b800 2012 22b6 0026 1100 3db6 002c 1908
+    0000130: 1907 07b9 0073 0200 b600 7db8 0020 1222
+    0000140: b600 2611 003e b600 2c19 0819 0708 b900
+    0000150: 7302 00b6 0080 b800 2012 22b6 0026 1100
+    0000160: 40b6 002c 2b19 08b9 0086 0200 57b8 0020
+    0000170: 1222 b600 2611 0041 b600 2ca7 fefd 1d9b
+    0000180: 0015 b800 2012 22b6 0026 1c1d 03b6 0065
+    0000190: 11ff ff3e b800 2012 22b6 0026 1100 44b6
+    00001a0: 002c a700 32b8 0020 1222 b600 2611 0042
+    00001b0: b600 2c3a 06b8 0020 1222 b600 2611 0043
+    00001c0: b600 2c12 02b6 008c b800 92b2 0098 0119
+    00001d0: 06b6 009c b800 2012 22b6 0026 1100 48b6
+    00001e0: 002c 0336 0615 062b b900 a001 0011 0048
+    00001f0: 3d11 0000 3ea2 012e 1c11 0048 a000 1c1d
+    0000200: 1100 00a0 0015 b800 2012 22b6 0026 1c1d
+    0000210: 04b6 0065 11ff ff3e b800 2012 22b6 0026
+    0000220: 1100 49b6 002c bb00 a259 b700 a312 a5b6
+    0000230: 00a9 2b15 06b9 00ad 0200 c000 67b6 00b0
+    0000240: b600 b3b6 00b6 3a07 b800 2012 22b6 0026
+    0000250: 1100 4ab6 002c 1905 b900 5501 003a 08b8
+    0000260: 0020 1222 b600 2611 004b b600 2c19 0819
+    0000270: 07b9 005b 0200 3a09 b800 2012 22b6 0026
+    0000280: 1100 4cb6 002c 1909 b900 6101 0057 b800
+    0000290: 2012 22b6 0026 1100 4db6 002c 2b15 06b9
+    00002a0: 00ad 0200 c000 67bb 00b8 5919 0905 b900
+    00002b0: bc02 00b7 00bf b600 c3b8 0020 1222 b600
+    00002c0: 2611 004e b600 2c2b 1506 b900 ad02 00c0
+    00002d0: 0067 bb00 c559 1909 06b9 00bc 0200 b700
+    00002e0: c6b6 00ca b800 2012 22b6 0026 1100 4fb6
+    00002f0: 002c 2b15 06b9 00ad 0200 c000 67bb 00cc
+    0000300: 5919 0907 b900 bc02 00b7 00cd b600 d1b8
+    0000310: 0020 1222 b600 2611 0048 b600 2c84 0601
+    0000320: a7fe c51d 9b00 15b8 0020 1222 b600 261c
+    0000330: 1d03 b600 6511 ffff 3eb8 0020 1222 b600
+    0000340: 2611 0053 b600 2ca7 0032 b800 2012 22b6
+    0000350: 0026 1100 51b6 002c 3a06 b800 2012 22b6
+    0000360: 0026 1100 52b6 002c 1202 b600 8cb8 0092
+    0000370: b200 9801 1906 b600 9cb8 0020 1222 b600
+    0000380: 2611 0055 b600 2c2a b400 3857 1905 b800
+    0000390: d5b8 0020 1222 b600 2611 0056 b600 2cb1
+    00003a0:                                        
+  Exception Handler Table:
+    bci [48, 382] => handler: 421
+    bci [468, 803] => handler: 842
+
+	at controller.ATMControllerTest.inquireBusinessBalanceValid(ATMControllerTest.java:65)
+</error>
+  </testcase>
 </testsuite>
